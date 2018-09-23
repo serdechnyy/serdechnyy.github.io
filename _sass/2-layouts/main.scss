@@ -364,6 +364,12 @@ img.sm-icon {
   width: 2.5em;
 }
 
+img.sm-icon.you{
+  background-image:"assets/youtube.svg";
+}
+img.sm-icon:hover {
+    opacity: 0.7;
+}
 .tall {
   height: 2.5em;
 }
@@ -461,10 +467,11 @@ input {
 .fields {
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 2.5em;
 }
 
 .form_title {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .need_more {
@@ -476,4 +483,36 @@ input {
   .need_more {
     width: 100%;
   }
+}
+
+button#questions{    
+    display: inline-block;
+    position: relative;
+    background-color: #c1c1c1;
+    border: solid 1px #000000;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: color .2s,background-color .2s,border-color .2s;
+    &:hover{
+      background-color:#e8e8e8;
+    }
+    &:active{
+      background-color:black;
+      color:white;
+    }
+}
+input{
+  outline:none;
+}
+button{
+  outline:none;
+}
+.sm-icon path{
+  fill:white!important;
 }
