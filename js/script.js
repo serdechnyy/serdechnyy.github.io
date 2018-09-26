@@ -53,31 +53,5 @@ $(document).ready(function() {
 			}
 		);
 	});
-
-	document.getElementById("questions").onclick = function() {
-		console.log("clicked");
-		var name_input = document.getElementById('user_name').value;
-		var phone_input = document.getElementById('phone_number').value;
-		var e_mail_input = document.getElementById('e_mail').value;
-
-		$.ajax({
-			url: "https://formspree.io/vimpil04@gmail.com",
-			method: "POST",
-			data: {
-				message: "hello!"
-			},
-			dataType: "json"
-		});
-	};
 	// END fancybox load
-
-	//SVG path's hover
-
-	$("a#ysmm").hover({
-		function(){
-		console.log("hover")
-	}
-	});
-	
-	//END SVG path's hover
 });
