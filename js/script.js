@@ -36,7 +36,7 @@ $(document).ready(function() {
 			var link_num = strArray[0];
 			/* get num of link */
 			var urll = ('gallery/2018/09/11/a' + link_num + '.html');
-			
+
 		}
 		$('.ajax-popup-link').magnificPopup({
 			type: 'ajax',
@@ -51,7 +51,6 @@ $(document).ready(function() {
 						var replacedsarr = replaceds.split("*");
 						var BreakException = {};
 						try {
-
 							replacedsarr.forEach(function(element) {
 								var result;
 								var active = 0;
@@ -75,12 +74,36 @@ $(document).ready(function() {
 						} catch (e) {
 							if (e !== BreakException) throw e;
 						}
-						$(".mfp-bg").attr("visibility","visible");
-			$(".mfp-wrap").attr("visibility","visible");
-						$('.ajcol').slick({
-							dots: true,
-						});		
+						// timer
+						var timer = null;
+						var WAIT_TIME = 50; // 3 seconds
+						var afterThreeSecondsDoThis = function() {
+							$('.ajcol').slick({
+								dots: true,
+							});
+							$('.ajax-text-and-image').css('visibility','visible');
+							$('.ajax-text-and-image').css('opacity','1');
+							$('.ajax-text-and-image').css('transition','opacity 1s ease');
+							$('.ajax-text-and-image *').css('visibility','visible');
+							$('.ajax-text-and-image *').css('opacity','1');
+							$('.ajax-text-and-image *').css('transition','opacity 1s ease');
+							
+
+							// 	visibility: 'visible',
+							// 	opacity: '1',
+							// 	transition: 'opacity 1s ease',
+							// 	-webkit-transition: 'opacity 1s ease',
+							// });
+							console.log('3 sec past');
+							clearTimeout(timer); // remove timer
+						}
+						var startTimer = function() {
+								timer = setTimeout(afterThreeSecondsDoThis, WAIT_TIME);
+							};
+							startTimer();
+							// END timer
 					});
+
 				})
 			}
 		});
